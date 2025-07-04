@@ -16,7 +16,7 @@ Ensure the following tools are installed and properly configured:
 
 ##  Installation Steps
 
-### 1 Install Kubernetes CLI (`kubectl`)
+### 1. Install Kubernetes CLI (`kubectl`)
 
 ```powershell
 choco install kubernetes-cli -y
@@ -29,7 +29,7 @@ kubectl version --client
 
 ---
 
-### 2 Install Minikube
+### 2. Install Minikube
 
 ```powershell
 choco install minikube -y
@@ -42,7 +42,7 @@ minikube version
 
 ---
 
-### 3 Start Kubernetes Cluster Using Docker Driver
+### 3. Start Kubernetes Cluster Using Docker Driver
 
 If you previously used another driver (like `hyperv`), delete the existing cluster:
 
