@@ -1,0 +1,133 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Vaishnavi Borase>docker --version
+Docker version 28.1.1, build 4eba377
+
+C:\Users\Vaishnavi Borase>choco install kubernetes-cli
+'choco' is not recognized as an internal or external command,
+operable program or batch file.
+
+PS C:\WINDOWS\system32> choco --version
+2.4.3
+PS C:\WINDOWS\system32> choco install kubernetes-cli -y
+Chocolatey v2.4.3
+Installing the following packages:
+kubernetes-cli
+By installing, you accept licenses for the packages.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading kubernetes-cli 1.33.2... 100%
+
+kubernetes-cli v1.33.2 [Approved]
+kubernetes-cli package files install completed. Performing other installation steps.
+Extracting 64-bit C:\ProgramData\chocolatey\lib\kubernetes-cli\tools\kubernetes-client-windows-amd64.tar.gz to C:\ProgramData\chocolatey\lib\kubernetes-cli\tools...
+C:\ProgramData\chocolatey\lib\kubernetes-cli\tools
+Extracting 64-bit C:\ProgramData\chocolatey\lib\kubernetes-cli\tools\kubernetes-client-windows-amd64.tar to C:\ProgramData\chocolatey\lib\kubernetes-cli\tools...
+C:\ProgramData\chocolatey\lib\kubernetes-cli\tools
+ ShimGen has successfully created a shim for kubectl-convert.exe
+ ShimGen has successfully created a shim for kubectl.exe
+ The install of kubernetes-cli was successful.
+  Deployed to 'C:\ProgramData\chocolatey\lib\kubernetes-cli\tools'
+
+Chocolatey installed 1/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+PS C:\WINDOWS\system32> kubectl version --client
+Client Version: v1.32.2
+Kustomize Version: v5.5.0
+PS C:\WINDOWS\system32> choco install minikube -y
+Chocolatey v2.4.3
+Installing the following packages:
+minikube
+By installing, you accept licenses for the packages.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading Minikube 1.36.0... 100%
+
+Minikube v1.36.0 [Approved]
+Minikube package files install completed. Performing other installation steps.
+ ShimGen has successfully created a shim for minikube.exe
+ The install of Minikube was successful.
+  Deployed to 'C:\ProgramData\chocolatey\lib\Minikube'
+
+Chocolatey installed 1/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+PS C:\WINDOWS\system32> minikube version
+minikube version: v1.36.0
+commit: f8f52f5de11fc6ad8244afac475e1d0f96841df1-dirty
+PS C:\WINDOWS\system32> minikube start --driver=docker
+* minikube v1.36.0 on Microsoft Windows 10 Pro 10.0.19045.5965 Build 19045.5965
+* Using the docker driver based on user configuration
+
+X Exiting due to PROVIDER_DOCKER_VERSION_EXIT_1: "docker version --format <no value>-<no value>:<no value>" exit status 1: error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.49/version": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+* Documentation: https://minikube.sigs.k8s.io/docs/drivers/docker/
+
+PS C:\WINDOWS\system32> kubectl get nodes
+E0703 20:15:11.766958   11248 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+E0703 20:15:11.788393   11248 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+E0703 20:15:11.795731   11248 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+E0703 20:15:11.801704   11248 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+E0703 20:15:11.808764   11248 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"http://localhost:8080/api?timeout=32s\": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+Unable to connect to the server: dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+PS C:\WINDOWS\system32> minikube status
+* Profile "minikube" not found. Run "minikube profile list" to view all profiles.
+  To start a cluster, run: "minikube start"
+PS C:\WINDOWS\system32> minikube start
+* minikube v1.36.0 on Microsoft Windows 10 Pro 10.0.19045.5965 Build 19045.5965
+* Automatically selected the hyperv driver
+* Downloading VM boot image ...
+    > minikube-v1.36.0-amd64.iso....:  65 B / 65 B [---------] 100.00% ? p/s 0s
+    > minikube-v1.36.0-amd64.iso:  360.83 MiB / 360.83 MiB  100.00% 5.31 MiB p/
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Downloading Kubernetes v1.33.1 preload ...
+    > preloaded-images-k8s-v18-v1...:  347.04 MiB / 347.04 MiB  100.00% 3.27 Mi
+* Creating hyperv VM (CPUs=2, Memory=2200MB, Disk=20000MB) ...
+! StartHost failed, but will try again: creating host: create: precreate: Hyper-V PowerShell Module is not available
+* Creating hyperv VM (CPUs=2, Memory=2200MB, Disk=20000MB) ...
+* Failed to start hyperv VM. Running "minikube delete" may fix it: creating host: create: precreate: Hyper-V PowerShell Module is not available
+
+X Exiting due to PR_HYPERV_MODULE_NOT_INSTALLED: Failed to start host: creating host: create: precreate: Hyper-V PowerShell Module is not available
+* Suggestion: Run: 'Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Tools-All -All'
+* Documentation: https://www.altaro.com/hyper-v/install-hyper-v-powershell-module/
+* Related issue: https://github.com/kubernetes/minikube/issues/9040
+
+PS C:\WINDOWS\system32> minikube start --driver=docker
+* minikube v1.36.0 on Microsoft Windows 10 Pro 10.0.19045.5965 Build 19045.5965
+E0703 20:21:22.831747   12716 start.go:819] api.Load failed for minikube: filestore "minikube": Docker machine "minikube" does not exist. Use "docker-machine ls" to list machines. Use "docker-machine create" to add a new one.
+
+! Exiting due to GUEST_DRIVER_MISMATCH: The existing "minikube" cluster was created using the "hyperv" driver, which is incompatible with requested "docker" driver.
+* Suggestion: Delete the existing 'minikube' cluster using: 'minikube delete', or start the existing 'minikube' cluster using: 'minikube start --driver=hyperv'
+
+PS C:\WINDOWS\system32> minikube delete
+* Removed all traces of the "minikube" cluster.
+PS C:\WINDOWS\system32> minikube start --driver=docker
+* minikube v1.36.0 on Microsoft Windows 10 Pro 10.0.19045.5965 Build 19045.5965
+* Using the docker driver based on user configuration
+* Using Docker Desktop driver with root privileges
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Pulling base image v0.0.47 ...
+    > gcr.io/k8s-minikube/kicbase...:  502.26 MiB / 502.26 MiB  100.00% 4.98 Mi
+* Creating docker container (CPUs=2, Memory=2200MB) ...
+! Failing to connect to https://registry.k8s.io/ from inside the minikube container
+* To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/
+* Preparing Kubernetes v1.33.1 on Docker 28.1.1 ...
+  - Generating certificates and keys ...
+  - Booting up control plane ...
+  - Configuring RBAC rules ...
+* Configuring bridge CNI (Container Networking Interface) ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+PS C:\WINDOWS\system32> minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+PS C:\WINDOWS\system32> kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   56s   v1.33.1
+PS C:\WINDOWS\system32>
